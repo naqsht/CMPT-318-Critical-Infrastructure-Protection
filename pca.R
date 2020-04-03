@@ -56,3 +56,8 @@ get_mean<- function(data){
 }
 pca <-get_mean(saturday_awayhours)
 summary(pca)
+library(devtools)
+#install_github("vqv/ggbiplot")
+library(ggbiplot)
+
+ggbiplot(pca)
