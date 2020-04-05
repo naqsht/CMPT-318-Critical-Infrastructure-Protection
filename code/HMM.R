@@ -104,52 +104,52 @@ test_data_wintor_weekend<-test_consumption_data[((test_consumption_data$Date>=as
                                                   test_consumption_data$weekdays_num>5,]
 
 write.table(train_data_spring_weekday, "train_data_spring_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_spring_weekend, "train_data_spring_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_summer_weekday, "train_data_summer_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_summer_weekend, "train_data_summer_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_autumn_weekday, "train_data_autumn_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_autumn_weekend, "train_data_autumn_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_wintor_weekday, "train_data_wintor_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(train_data_wintor_weekend, "train_data_wintor_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_spring_weekday, "test_data_spring_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_spring_weekend, "test_data_spring_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_summer_weekday, "test_data_summer_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_summer_weekend, "test_data_summer_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_autumn_weekday, "test_data_autumn_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_autumn_weekend, "test_data_autumn_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_wintor_weekday, "test_data_wintor_weekday.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 write.table(test_data_wintor_weekend, "test_data_wintor_weekend.txt", append = FALSE, sep = ",", dec = ".",
-            row.names = TRUE, col.names = FALSE)
+            row.names = FALSE, col.names = TRUE)
 
 #features to train on
 hmm_features<-list(Global_intensity~1,Voltage~1)
