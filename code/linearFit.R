@@ -24,9 +24,108 @@ weekday <- read.csv("plot data/one_random_weekday.txt",header= TRUE)
 weekday <- na.omit(weekday)
 awayTime <- factor(autumnDataset$Time)
 
+time <- factor(summerDataset$Date , Date = "%Y-%m-%d")
+
+
+data <- summerDataset
+get_mean<- function(data){
+  data$Date <- as.Date(data$Date, "%Y-%m-%d")
+  data$Date <- format(data$Date, "%m-%d")
+  dates <- factor(data$Date)
+  mean_active_power <- aggregate(data["Global_active_power"], by=data["Date"], mean)
+  mean_reactive_power <- aggregate(data["Global_reactive_power"], by=data["Date"], mean)
+  mean_voltage <- aggregate(data["Voltage"], by=data["Date"], mean)
+  mean_intensity <- aggregate(data["Global_intensity"], by=data["Date"], mean)
+  mean_metering_1 <- aggregate(data["Sub_metering_1"], by=data["Date"], mean)
+  mean_metering_2 <- aggregate(data["Sub_metering_2"], by=data["Date"], mean)
+  mean_metering_3 <- aggregate(data["Sub_metering_3"], by=data["Date"], mean)
+  mean_total <- merge(mean_active_power,mean_reactive_power, by="Date")
+  mean_total <- merge(mean_total,mean_voltage, by="Date")
+  mean_total <- merge(mean_total, mean_intensity, by="Date")
+  mean_total <- merge(mean_total, mean_metering_1, by="Date")
+  mean_total <- merge(mean_total, mean_metering_2, by="Date")
+  mean_total <- merge(mean_total, mean_metering_3, by="Date")
+  p1 <- ggplot(data=mean_total , mapping=aes(x=as.Date(Date,"%m-%d"), y=Global_active_power, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue") +
+    scale_x_date(date_labels="%b-%d") +
+    xlab("Date")
+  p2 <- ggplot(data=mean_total , mapping=aes(x=as.Date(Date,"%m-%d"), y=Global_reactive_power, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue")  +
+    scale_x_date(date_labels="%b-%d")+
+    xlab("Date")
+  p3 <- ggplot(data=mean_total , mapping=aes(x=as.Date(Date,"%m-%d"), y=Global_intensity, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue")  +
+    scale_x_date(date_labels="%b-%d")+ 
+    xlab("Date")
+  plots <- list(p1,p2,p3)
+  return(plots)
+}
+
+plotSum = get_mean(summerDataset)
+print(plotSum[1])
+print(plotSum[2])
+print(plotSum[3])
+
+plotAut= get_mean(autumnDataset)
+print(plotAut[1])
+print(plotAut[2])
+print(plotAut[3])
+
+plotSpr = get_mean(springDataset)
+print(plotSpr[1])
+print(plotSpr[2])
+print(plotSpr[3])
+
+get_meanWinter<- function(data){
+  data$Date <- as.Date(data$Date, "%Y-%m-%d")
+  data$Date <- format(data$Date, "%b-%d")
+  dates <- factor(data$Date)
+  mean_active_power <- aggregate(data["Global_active_power"], by=data["Date"], mean)
+  mean_reactive_power <- aggregate(data["Global_reactive_power"], by=data["Date"], mean)
+  mean_voltage <- aggregate(data["Voltage"], by=data["Date"], mean)
+  mean_intensity <- aggregate(data["Global_intensity"], by=data["Date"], mean)
+  mean_metering_1 <- aggregate(data["Sub_metering_1"], by=data["Date"], mean)
+  mean_metering_2 <- aggregate(data["Sub_metering_2"], by=data["Date"], mean)
+  mean_metering_3 <- aggregate(data["Sub_metering_3"], by=data["Date"], mean)
+  mean_total <- merge(mean_active_power,mean_reactive_power, by="Date")
+  mean_total <- merge(mean_total,mean_voltage, by="Date")
+  mean_total <- merge(mean_total, mean_intensity, by="Date")
+  mean_total <- merge(mean_total, mean_metering_1, by="Date")
+  mean_total <- merge(mean_total, mean_metering_2, by="Date")
+  mean_total <- merge(mean_total, mean_metering_3, by="Date")
+  p1 <- ggplot(data=mean_total , mapping=aes(x=Date, y=Global_active_power, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue") +
+    scale_x_discrete(
+      breaks=levels(dates)[keeps],
+      labels=levels(dates)[keeps])
+  p2 <- ggplot(data=mean_total , mapping=aes(x=Date, y=Global_reactive_power, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue")  +
+    scale_x_discrete(
+      breaks=levels(dates)[keeps],
+      labels=levels(dates)[keeps])
+  p3 <- ggplot(data=mean_total , mapping=aes(x=Date, y=Global_intensity, group = 1)) +
+    geom_point(color="black") +
+    geom_smooth(color="Blue")  +
+    scale_x_discrete(
+      breaks=levels(dates)[keeps],
+      labels=levels(dates)[keeps])
+  plots <- list(p1,p2,p3)
+  return(plots)
+}
+keeps<-c(1,10,20,30,40,50,60,70,80,90,92)
+awayTime <- factor(winterDataset$Time)
+plotWin= get_meanWinter(winterDataset)
+
+print(plotWin[1])
+print(plotWin[2])
+print(plotWin[3])
 
 keeps<-c(1,121,241,361,481,601,721,841,961,1081,1201,1321,1440) # Indices for levels you want to show
-
 get_linearPolyFit <- function(data){
   time <- factor(data$Time)
   count <- 1
@@ -184,7 +283,7 @@ get_linearPolyFit <- function(data){
   returnList = list(p1,p2,p3,p4,p5,p6,p7)
   return(returnList)
 }
-
+keeps<-c(1,121,241,361,481,601,721,841,961,1081,1201,1321,1440) # Indices for levels you want to show
 plots = get_linearPolyFit(autumnDataset)
 print(plots[1])
 print(plots[2])
