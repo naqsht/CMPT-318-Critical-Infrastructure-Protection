@@ -28,6 +28,7 @@ countLines <- function(data){
 
 set.seed(1)
 #Parse training data
+setwd('/home/jl/cmpt318-project/statstics data')
 #setwd('E:\\OneDrive - sfu.ca\\CMPT 318 Cyber Security\\cmpt318-project')
 setwd('D:\\CMPT318D1-1121-Term-Project\\cmpt318-project')
 

@@ -1,0 +1,68 @@
+Spring Weekday
+
+Convergence info: likelihood decreased in EM iteration; stopped without convergence. 
+'log Lik.' 685915.4 (df=287)
+AIC:  -1371257 
+BIC:  -1368544
+
+'log Lik.' 539150.8 (df=287)
+
+Summer Weekday
+
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -77195.63 (df=47)
+AIC:  154485.3 
+BIC:  154930 
+
+'log Lik.' -84554.68 (df=47)
+
+Autumn Weekday
+
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -92511.35 (df=47)
+AIC:  185116.7 
+BIC:  185560.7 
+
+'log Lik.' -91327.76 (df=47)
+
+Winter Weekday
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -85566.8 (df=47)
+AIC:  171227.6 
+BIC:  171662 
+
+'log Lik.' -100574.2 (df=47)
+
+Spring Weekend
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -52453.12 (df=23)
+AIC:  104952.2 
+BIC:  105146.6 
+
+'log Lik.' -52420.6 (df=23)
+
+Summer Weekend
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -42199.05 (df=23)
+AIC:  84444.1 
+BIC:  84640.3 
+
+'log Lik.' -46739.38 (df=23)
+
+Autumn Weekend
+
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -27948.05 (df=98)
+AIC:  56092.1 
+BIC:  56928.09 
+
+'log Lik.' -28601.42 (df=98)
+
+Winter Weekend
+
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -56154.5 (df=47)
+AIC:  112403 
+BIC:  112794.5 
+
+'log Lik.' -44378.05 (df=47)

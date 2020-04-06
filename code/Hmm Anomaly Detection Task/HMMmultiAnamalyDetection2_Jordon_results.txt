@@ -1,0 +1,78 @@
+HMMmultiAnamalyDetection2_Jordon
+Spring Weekday
+Train
+Convergence info: likelihood decreased in EM iteration; stopped without convergence. 
+'log Lik.' -4071.252 (df=319)
+AIC:  8780.505 
+BIC:  11795.98 
+
+Test
+'log Lik.' -120373.3 (df=319)
+
+Summer Weekday
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -155021.1 (df=59)
+AIC:  310160.2 
+BIC:  310718.4 
+
+Test
+'log Lik.' -258334.1 (df=59)
+
+Autumn Weekday
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -156449.6 (df=59)
+AIC:  313017.2 
+BIC:  313574.5 
+Test
+'log Lik.' -263955.2 (df=59)
+
+Winter Weekday
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -115927.5 (df=59)
+AIC:  231972.9 
+BIC:  232518.2 
+Test
+log Lik.' -311248.6 (df=59)
+
+Spring Weekend
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -81685.93 (df=31)
+AIC:  163433.9 
+BIC:  163695.8 
+
+Test
+'log Lik.' -104390.1 (df=31)
+
+Summer Weekend
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -75952.47 (df=31)
+AIC:  151966.9 
+BIC:  152231.4
+
+Test
+'log Lik.' -110676.1 (df=31)
+
+Autumn Weekend
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -58376.06 (df=116)
+AIC:  116984.1 
+BIC:  117973.7 
+
+Test
+'log Lik.' -97761.63 (df=116)
+
+Winter Weekend
+Train
+Convergence info: Log likelihood converged to within tol. (relative change) 
+'log Lik.' -77886.23 (df=59)
+AIC:  155890.5 
+BIC:  156381.9 
+
+Test
+log Lik.' -118387.4 (df=59)
